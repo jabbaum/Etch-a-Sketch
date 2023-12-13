@@ -1,0 +1,25 @@
+.main {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: flex-start;
+}
+.sketchPad {
+    padding: 0;
+    margin: 10em 10px 10px 10px;
+    width: 190px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cell {
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+/* * {
+    border: 2px solid red;
+} */
