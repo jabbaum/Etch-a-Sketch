@@ -19,6 +19,9 @@
     border-radius: 5px;
     flex-grow: 1;
 }
+.once {
+    background-color: #000;
+}
 
 /* * {
     border: 2px solid red;

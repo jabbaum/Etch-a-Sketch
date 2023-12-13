@@ -4,10 +4,15 @@ function cellCreator () {
     for (let i = 0; i < 9; i++) {
         cell = document.createElement('div');
         cell.setAttribute( `class`, `cell`);
+        cell.addEventListener('mouseenter', onHover);
         sketchPad.appendChild(cell);
     }
 
     
+}
+
+function onHover() {
+    this.setAttribute('class', 'cell once');
 }
 
 addEventListener("load", cellCreator);
