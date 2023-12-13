@@ -1,3 +1,5 @@
+let rangeControl = document.querySelector('#rangeControl');
+
 function cellCreator () {
     let sketchPad = document.querySelector(`.sketchPad`);
     let cell = null;
@@ -22,9 +24,28 @@ function onHover() {
     this.setAttribute('class', 'cell once');
 }
 
-function setCellCount() {
-    let cellCount = 16;
-    return cellCount;
+function setCellCount(size) {
+    let cellCount = null;
+    if (!size) {
+        cellCount = 16;
+        return cellCount
+    } else {
+        cellCount = size;
+        return cellCount;
+    }
+}
+
+function changeCellCount(e) {
+    if(!e) {
+        return 'error';
+    } else {
+        let sizeDisplay = document.querySelector('.sizeDisplay > P');
+        let size = e.currentTarget.value;
+        sizeDisplay.textContent = size;
+        setCellCount(size);
+    }
 }
 
 addEventListener("load", cellCreator);
+rangeControl.addEventListener('input', changeCellCount);
+
