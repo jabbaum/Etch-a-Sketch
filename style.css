@@ -8,13 +8,11 @@
 .sketchPad {
     padding: 0;
     margin: 10em 10px 10px 10px;
-    width: 330px;
+    width: 960px;
     display: flex;
     flex-wrap: wrap;
 }
 .cell {
-    width: 20px;
-    height: 20px;
     background-color: pink;
     border-radius: 5px;
     flex-grow: 1;
