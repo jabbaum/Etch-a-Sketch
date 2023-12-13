@@ -1,14 +1,18 @@
 let rangeControl = document.querySelector('#rangeControl');
 
-function cellCreator () {
-    let sketchPad = document.querySelector(`.sketchPad`);
-    let cell = null;
+function drawingController() {
     let cellCount = setCellCount();
     let boardSize = cellCount * cellCount;
     let cellSize = Math.floor(960/cellCount);
-    console.log(cellSize);
+    cellCreator(boardSize, cellSize);
+
+}
+
+function cellCreator (boardSize, cellSize) {
+    let sketchPad = document.querySelector(`.sketchPad`);
+    let cell = null;
+    sketchPad.innerHTML = '';
     for (let i = 0; i < boardSize; i++) {
-        
         cell = document.createElement('div');
         cell.setAttribute( `class`, `cell`);
         cell.style.width = `${cellSize}px`;
@@ -24,28 +28,30 @@ function onHover() {
     this.setAttribute('class', 'cell once');
 }
 
-function setCellCount(size) {
+function setCellCount() {
     let cellCount = null;
-    if (!size) {
-        cellCount = 16;
+    let size = rangeControl.value;
+    let sizeDisplay = document.querySelector('.sizeDisplay > P');
+    if (size) {
+        sizeDisplay.textContent = size;
+        cellCount = size;
         return cellCount
     } else {
-        cellCount = size;
-        return cellCount;
+        return 'error';
     }
 }
 
-function changeCellCount(e) {
+function handleRangeChange(e) {
     if(!e) {
         return 'error';
     } else {
         let sizeDisplay = document.querySelector('.sizeDisplay > P');
         let size = e.currentTarget.value;
         sizeDisplay.textContent = size;
-        setCellCount(size);
+        drawingController();
     }
 }
 
-addEventListener("load", cellCreator);
-rangeControl.addEventListener('input', changeCellCount);
+addEventListener("load", drawingController);
+rangeControl.addEventListener('input', handleRangeChange);
 
