@@ -1,13 +1,14 @@
 .main {
     display: flex;
-    margin: 0;
+    margin: 10em 10px 10px 10px ;
     padding: 0;
     justify-content: center;
     align-items: flex-start;
+    gap: 50px;
 }
 .sketchPad {
     padding: 0;
-    margin: 10em 10px 10px 10px;
+    margin: 0;
     width: 960px;
     display: flex;
     flex-wrap: wrap;
@@ -19,6 +20,30 @@
 }
 .once {
     background-color: #000;
+}
+input[type="range"] {
+    appearance: slider-vertical;
+    margin: 0;
+    padding: 0;
+    width: 15px
+}
+
+
+.boardSizeControl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.sizeDisplay {
+    border: 1px solid rgb(14, 254, 114);
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+
 }
 
 /* * {
