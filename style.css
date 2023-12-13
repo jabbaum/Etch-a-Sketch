@@ -12,10 +12,10 @@
     width: 960px;
     display: flex;
     flex-wrap: wrap;
+    border: 1px solid #000;
 }
 .cell {
-    background-color: pink;
-    border-radius: 5px;
+    background-color: #fff;
     flex-grow: 1;
 }
 .once {
